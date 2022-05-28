@@ -100,4 +100,30 @@ class Cpuch_Download_Codes_Admin {
 
 	}
 
+	/**
+	 * Register the admin menu into the WordPress Dashboard menu.
+	 *
+	 * @since 0.1
+	 */
+	public function add_plugin_admin_menu() {
+		add_menu_page(
+			'CPuch Download Codes',
+			'Download Codes',
+			'manage_options',
+			'cpuch-download-codes',
+			array( $this, 'display_plugin_setup_page' ),
+			'dashicons-download',
+			90
+		);
+	}
+
+	/**
+	 * Render the settings page for this plugin.
+	 *
+	 * @since 0.1
+	 */
+	public function display_plugin_setup_page() {
+		include_once 'partials/cpuch-download-codes-admin-display.php';
+	}
+
 }
