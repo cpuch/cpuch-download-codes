@@ -126,4 +126,19 @@ class Cpuch_Download_Codes_Admin {
 		include_once 'partials/cpuch-download-codes-admin-display.php';
 	}
 
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since 0.1
+	 * @param array $links    Array of links.
+	 */
+	public function add_plugin_action_links( $links ) {
+
+		$settings_link = array(
+			'<a href="' . admin_url( 'admin.php?page=cpuch-download-codes' ) . '">' . __( 'Settings', 'cpuch-download-codes' ) . '</a>',
+		);
+
+		return array_merge( $settings_link, $links );
+	}
+
 }
